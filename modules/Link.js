@@ -81,7 +81,9 @@ export var Link = React.createClass({
         onClick: this.handleClick
       });
     } else {
-      props = {href: to};
+      props = Object.assign({}, this.props, {
+        href: to
+      });
     }
 
     // ignore if rendered outside of the context of a router, simplifies unit testing
